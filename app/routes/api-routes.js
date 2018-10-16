@@ -20,10 +20,10 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/api/:fieldoperatorsearched?", function (req, res) {
-    let field = req.params.field;
-    let operator = req.params.operator;
-    let searched = req.params.searched;
+  app.get("/api/results?", function (field, operator, searched, req, res) {
+    // let field = req.params.field;
+    // let operator = req.params.operator;
+    // let searched = req.params.searched;
 
     // console.log(field, operator, searched);
 

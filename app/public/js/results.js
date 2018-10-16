@@ -20,10 +20,10 @@ $("#search-submit").on("click", function (event) {
   var operator = $("#operators").val();
   var searched = $("#search-text").val();
 
-  // console.log(field, operator, searched);
-
-  $.get("api/", {field, operator, searched}, function(data){
-    populateTable(data);
+  $.get("api/results" , {field: field, operator: operator, searched: searched}, function(data){
+    console.log(data);
+    $("#search-options")[0].reset();
+    // populateTable(data);
   });
 });
 

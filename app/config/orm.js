@@ -30,7 +30,7 @@ var orm = {
     // var s = "SELECT " + tableName + ".student_id, first_name, last_name, DOB, address, city, county, state, zip FROM " + tableName + " INNER JOIN " + tableAddress + " ON " + tableName + ".student_id =" +  tableAddress + ".student_id WHERE " + field + operator + "'" + searched + "'";
     var s = `SELECT ${tableName}.student_id, first_name, last_name, DOB, address, city, county, state, zip FROM ${tableName} INNER JOIN ${tableAddress} ON ${tableName}.student_id = ${tableAddress}.student_id WHERE (${field} ${operator} "${searched}")`;
     // console.log(s);
-    connection.query(s, [field], [operator], [searched], function (err, result) {
+    connection.query(s, function (err, result) {
       if (err) {
         throw err
       }
