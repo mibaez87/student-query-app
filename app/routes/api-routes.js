@@ -20,8 +20,8 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/api/:searched", function (req, res) {
-    orm.stuSearch(req.params.searched, function (results) {
+  app.get("/api/:fieldoperatorsearched", function (req, res) {
+    orm.stuSearch(req.params.field, req.params.operator, req.params.searched, function (results) {
       res.json(results);
     });
   });
