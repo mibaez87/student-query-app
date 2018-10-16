@@ -20,8 +20,14 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/api/:fieldoperatorsearched", function (req, res) {
-    orm.stuSearch(req.params.field, req.params.operator, req.params.searched, function (results) {
+  app.get("/api/:fieldoperatorsearched?", function (req, res) {
+    let field = req.params.field;
+    let operator = req.params.operator;
+    let searched = req.params.searched;
+
+    // console.log(field, operator, searched);
+
+    orm.stuSearch(field, operator, searched, function (results) {
       res.json(results);
     });
   });
