@@ -20,9 +20,9 @@ module.exports = function (app) {
     });
   });
 
-  // app.get("/api/:searched", function (req, res) {
-  //   orm.stuSearch(req.params.searched, function (results) {
-  //     res.json(results);
-  //   });
-  // });
+  app.get("/api/:searched", function (req, res) {
+    orm.stuSearch(req.params.searched, function (results) {
+      res.json(results);
+    });
+  });
 };
